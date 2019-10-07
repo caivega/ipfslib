@@ -4,23 +4,25 @@ See the test/test_ipfs.js for more details.
 
 # JSON API
 
-- [JSON-RPC methods](#json-rpc-methods)
-		* [jt_issueToken](#jt_issueToken)
-		* [jt_createToken](#jt_createToken)
-		* [jt_removeToken](#jt_removeToken)
-		* [jt_transferToken](#jt_transferToken)
-		* [jt_ownerOf](#jt_ownerOf)
-		* [jt_tokensOf](#jt_tokensOf)
-		* [jt_getTokenByHash](#jt_getTokenByHash)
-		* [jt_getTokenByIndex](#jt_getTokenByIndex)
-		* [jt_getTokenCount](#jt_getTokenCount)
-		* [jt_getTokenInfoByHash](#jt_getTokenInfoByHash)
-		* [jt_createData](#jt_createData)
-		* [jt_removeData](#jt_removeData)
-		* [jt_uploadData](#jt_uploadData)
-		* [jt_downloadData](#jt_downloadData)
-		* [jt_uploadFile](#jt_uploadFile)
-		* [jt_downloadFile](#jt_downloadFile)
+* [JSON-RPC methods](#json-rpc-methods)   
+	* [jt_issueToken](#jt_issueToken)   
+	* [jt_createToken](#jt_createToken)
+	* [jt_removeToken](#jt_removeToken)
+	* [jt_transferToken](#jt_transferToken)
+	* [jt_ownerOf](#jt_ownerOf)
+	* [jt_tokensOf](#jt_tokensOf)
+	* [jt_getTokenByHash](#jt_getTokenByHash)
+	* [jt_getTokenByIndex](#jt_getTokenByIndex)
+	* [jt_getTokenCount](#jt_getTokenCount)
+	* [jt_getTokenInfoByHash](#jt_getTokenInfoByHash)
+	* [jt_createData](#jt_createData)
+	* [jt_removeData](#jt_removeData)
+	* [jt_uploadData](#jt_uploadData)
+	* [jt_downloadData](#jt_downloadData)
+	* [jt_uploadFile](#jt_uploadFile)
+	* [jt_downloadFile](#jt_downloadFile)
+
+***
 
 #### <a name="jt_issueToken"></a>jt_issueToken 发行类erc721的Token
 
@@ -944,5 +946,3 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"jt_downloadFile","params":["FED6
 // Result 结果
 Think.pdf文件
 ```
-
-***
