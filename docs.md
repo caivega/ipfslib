@@ -1,5 +1,5 @@
 # Documents
-Usage for ipfs-lib
+Usage for ipfs-lib  
 See the test/test_ipfs.js for more details.
 
 # JSON API
