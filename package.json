@@ -1,0 +1,67 @@
+{
+  "name": "ipfslib",
+  "version": "1.0.0",
+  "description": "ipfs package",
+  "main": "src/index.js",
+  "unpkg": "dist/ipfslib.js",
+  "jsdelivr": "dist/ipfslib.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "prettier": "prettier",
+    "pretty-quick": "pretty-quick",
+    "prettier:check": "prettier -c tssrc/*.ts tssrc/*.js",
+    "prettier:tabs": "prettier --use-tabs --write package.json tssrc/*.ts tssrc/*.js",
+    "tsc": "mkdir -p src && cp tssrc/*js src/ && tsc",
+    "tslint": "tslint tssrc/*.ts",
+    "eslint": "eslint tssrc/*.js",
+    "build": "npm run tsc && webpack",
+    "build:dev": "npm run tsc && webpack --mode development",
+    "test": "mocha \"test/test*.js\"",
+    "test:extended": "mocha \"test/*.js\"",
+    "test:nyc": "nyc --reporter=html --reporter=text mocha test/test*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caivega/ipfslib.git"
+  },
+  "keywords": [
+    "swtc",
+    "jingtum",
+    "ipfs"
+  ],
+  "author": "caivega <caivega@163.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "git+https://github.com/caivega/ipfslib.git"
+  },
+  "homepage": "https://github.com/caivega/ipfslib",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "swtc-serializer": "^2.1.8",
+    "swtc-transaction": "^1.2.18",
+    "swtc-wallet": "^1.1.15"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.2",
+    "chai": "^4.2.0",
+    "chai-json-schema": "^1.5.0",
+    "concat-stream": "^2.0.0",
+    "eslint": "^5.16.0",
+    "form-data": "^2.5.1",
+    "jsbn": "^1.1.0",
+    "lru-cache": "^4.0.1",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0",
+    "sha1": "^1.1.1",
+    "sinon": "^7.2.4",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
+  }
+}
