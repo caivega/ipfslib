@@ -5,20 +5,12 @@ import http = require("http")
 import { IpfsOptions, IResponse, IDataOptions, IIssueTokenOptions, ICreateTokenOptions, IRemoveTokenOptions, ITransferTokenOptions, IpfsResponse, NetworkInfo } from "./types";
 const Transaction = require("swtc-transaction").Transaction
 
+import { string2Hex } from "./data"
+
 import { Factory as SerializerFactory } from "swtc-serializer"
 import { Factory as WalletFactory } from "swtc-wallet"
 const Wallet = WalletFactory("jingtum")
 const jser = SerializerFactory(Wallet)
-
-function strToHexCharCode(str) {
-    if(str === "")
-        return "";
-    var hexCharCode = [];  
-    for(var i = 0; i < str.length; i++) {
-        hexCharCode.push((str.charCodeAt(i)).toString(16));
-    }
-    return hexCharCode.join("");
-}
 
 class IpfsRemote {
     _options:IpfsOptions;
@@ -162,7 +154,7 @@ class IpfsRemote {
 
             option.invoice = item.invoice
 
-            let hexString = strToHexCharCode('ipfs\u0000\u0002' + JSON.stringify(network))
+            let hexString = string2Hex('ipfs\u0000\u0002' + JSON.stringify(network))
             option.memos = [hexString]
             let blob = await this._signTransaction(option)
             blobs.push(blob)
@@ -187,7 +179,7 @@ class IpfsRemote {
         tx.setFee("10")
 
         for(let i = 0; i < option.memos.length; i ++){
-            tx.addMemo(option.memos[i])
+            tx.addMemo(option.memos[i], 'hex')
         }
 
         const prefix = 0x54584E00
@@ -216,12 +208,12 @@ class IpfsRemote {
 
           if(option.data && option.data.length > 0){
             for(let i = 0; i < option.data.length; i ++){
-                tx.addHexMemo(option.data[i])
+                tx.addMemo(option.data[i], 'hex')
             }
           }
 
           for(let i = 0; i < option.memos.length; i ++){
-            tx.addHexMemo(option.memos[i])
+            tx.addMemo(option.memos[i], 'hex')
           }
 
           let txBlob = await tx.signPromise(option.secret)
