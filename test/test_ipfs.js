@@ -18,7 +18,6 @@ describe("test IpfsRemote", function() {
     // describe("test upload file", function() {
     //     it("jt_uploadFile: test", function() {
     //         const filePath = "~/Downloads/x963-7-5-98.pdf"
-    //         // const filePath = "~/Downloads/Cyberduck-6.8.3.29107.zip"
             
     //         // const fileData = fs.readFileSync(filePath)
     //         const fileReader = fs.createReadStream(filePath)
