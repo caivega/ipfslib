@@ -17,8 +17,8 @@ describe("test IpfsRemote", function() {
     })
     // describe("test upload file", function() {
     //     it("jt_uploadFile: test", function() {
-    //         const filePath = "/Volumes/data/admin/Downloads/x963-7-5-98.pdf"
-    //         // const filePath = "/Volumes/data/admin/Downloads/Cyberduck-6.8.3.29107.zip"
+    //         const filePath = "~/Downloads/x963-7-5-98.pdf"
+    //         // const filePath = "~/Downloads/Cyberduck-6.8.3.29107.zip"
             
     //         // const fileData = fs.readFileSync(filePath)
     //         const fileReader = fs.createReadStream(filePath)
@@ -31,7 +31,7 @@ describe("test IpfsRemote", function() {
     // })
     // describe("test download file", function() {
     //     it("jt_downloadFile: test", function() {
-    //         const filePath = "/Volumes/data/admin/Downloads/test.pdf"
+    //         const filePath = "~/Downloads/test.pdf"
     //         const fileWriter = fs.createWriteStream(filePath)
     //         remote.DownloadFile("AC0E78F1F918B617F227EB8DC7E9426FEB9BF1A90E8493B02651352ECB194678", fileWriter, function () {
     //             console.log('[success]', filePath);
