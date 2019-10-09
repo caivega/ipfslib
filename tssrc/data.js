@@ -1,4 +1,4 @@
-export function string2Hex(str) {
+function string2Hex(str) {
     if(str === "")
         return "";
     var hexCharCode = [];  
@@ -6,4 +6,8 @@ export function string2Hex(str) {
         hexCharCode.push((str.charCodeAt(i)).toString(16));
     }
     return hexCharCode.join("");
+}
+
+module.exports = {
+    string2Hex
 }
