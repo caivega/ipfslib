@@ -3,11 +3,11 @@ import FormData from "form-data"
 import http = require("http")
 
 import { IpfsOptions, IResponse, IDataOptions, IIssueTokenOptions, ICreateTokenOptions, IRemoveTokenOptions, ITransferTokenOptions, IpfsResponse, NetworkInfo } from "./types";
-const Transaction = require("swtc-transaction").Transaction
+const Transaction = require("swtc-transaction-ext").Transaction
 
 import { string2Hex } from "./data"
 
-import { Factory as SerializerFactory } from "swtc-serializer"
+import { Factory as SerializerFactory } from "swtc-serializer-ext"
 import { Factory as WalletFactory } from "swtc-wallet"
 const Wallet = WalletFactory("jingtum")
 const jser = SerializerFactory(Wallet)
