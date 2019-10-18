@@ -144,7 +144,7 @@ class IpfsRemote {
             if(gasEnabled){
                 let gasOption = JSON.parse(JSON.stringify(option)) as IDataOptions;
                 gasOption.memos = [item.data_hash]
-                let gasReturned = await this._signTransactionWithHash(gasOption)
+                let gasReturned = await this._signTransactionWithHash(gasOption, item.gas_limit)
                 let gasBlob = gasReturned.blob as string
                 blobs.push(gasBlob)
 
@@ -163,12 +163,12 @@ class IpfsRemote {
         return blobs
     }
 
-    public async _signTransactionWithHash(option: IDataOptions) {
+    public async _signTransactionWithHash(option: IDataOptions, value:number) {
         let tx = Transaction.buildPaymentTx({
             account: option.from,
             to: option.to,
             amount: {
-                value: 10,
+                value: value,
                 currency: "SWT",
                 issuer:""
             }

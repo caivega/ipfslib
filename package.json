@@ -42,7 +42,8 @@
     "axios": "^0.19.0",
     "build": "^0.1.4",
     "swtc-serializer": "^2.1.8",
-    "swtc-transaction": "^1.2.18"
+    "swtc-transaction": "^1.2.18",
+    "swtc-wallet": "^1.1.15"
   },
   "devDependencies": {
     "@types/node": "^12.0.2",
